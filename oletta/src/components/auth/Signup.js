@@ -20,6 +20,20 @@ export default function Signup(props) {
         <div>
             <form className="signup-form">
                 <div>
+                    <label>First Name</label>&nbsp;
+                    <input onChange={changeHandler}
+                        type='text'
+                        name='first_name'
+                    />
+                </div>
+                <div>
+                    <label>Last Name</label>&nbsp;
+                    <input onChange={changeHandler}
+                        type='text'
+                        name='last_name'
+                    />
+                </div>
+                <div>
                     <label>Username</label>&nbsp;
                     <input onChange={changeHandler}
                         type='text'
@@ -52,7 +66,7 @@ export default function Signup(props) {
                         name='password2'
                     />
                 </div>
-                <button className="register-button" onClick={registerHandler}>Register</button>
+                <button className="register-button" onClick={registerHandler}>Continue</button>
             </form>
         </div>
     )

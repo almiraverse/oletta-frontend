@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from 'react'
 import Signup from './components/auth/Signup'
 import Login from './components/auth/Login'
+import Users from './components/Users'
+// import LandingPage from './components/LandingPage'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import axios from 'axios';
@@ -36,7 +38,7 @@ export default function App() {
   }
 
   const loginHandler = (cred) => {
-    axios.post("127.0.0.1:8003/auth/login/", cred)
+    axios.post("auth/login/", cred)
       .then(res => {
         console.log(res.data.token)
         let token = res.data.token
@@ -52,6 +54,12 @@ export default function App() {
       })
   }
 
+  const logoutHandler = (e) => {
+    e.preventDefault() 
+    localStorage.removeItem("token");
+    setIsAuth(false)
+    setUser(null)
+  }
 
   return (
     <>
@@ -63,15 +71,20 @@ export default function App() {
           <div className='nav-links'>
             <button className='links signupBtn'><Link to='/register'>Sign Up</Link></button>
             <button className='links loginBtn'><Link to='/login'>Login</Link></button>
+            <button className='links logoutBtn'><Link to='/logout'>Logout</Link></button>
           </div>
         </nav>
 
         <Routes>
           <Route path="/register" element={<Signup register={registerHandler} />}></Route>
           <Route path="/login" element={<Login login={loginHandler} />}></Route>
+          <Route path="/login" element={<Login login={logoutHandler} />}></Route>
 
         </Routes>
       </Router>
+
+      <h1>Here are the Users:</h1>
+      <Users />
     </>
   )
 }
