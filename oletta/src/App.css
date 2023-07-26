@@ -1,73 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-body{
+body {
   /* background-color: rgb(7, 8, 7); */
-  max-width: 380px;
+  max-width: 428px;
+  max-height: 926px;
   margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+
 }
 
-.signupBtn, .register-button{
-  background-color: rgb(7, 8, 7);
-  border-radius: 30px;
+.landingPage {
+  background-color: #151414;
+}
+
+.languageBubbles {
+  margin-top: -100px;
+  position: relative;
+  animation: x 7s linear infinite alternate;
+}
+
+.flagBubble1,
+.flagBubble3,
+.flagBubble6 {
+  animation: y 3s linear infinite alternate;
+}
+
+.flagBubble2,
+.flagBubble4,
+.flagBubble5 {
+  animation: y 2s linear infinite alternate;
+
+}
+
+@keyframes x {
+  100% {
+    transform: translateX(calc(40vw - 40px));
+  }
+}
+
+@keyframes y {
+  100% {
+    transform: translateY(calc(5vh + 20px));
+  }
+}
+
+/* 
+.flagBubble1, .flagBubble5{
+  animation: y 3s linear infinite alternate, x 3s linear infinite alternate;
+}
+.flagBubble2, .flagBubble4{
+  animation: y 3s linear infinite alternate, x 2s linear infinite alternate;
+}
+.flagBubble6, .flagBubble3{
+  animation: y 2s linear infinite alternate, x 2s linear infinite reverse;
+}
+@keyframes x {
+  100% {
+    transform: translateX( calc(100vw - 100px) );
+  }
+}
+
+@keyframes y {
+  100% {
+    transform: translateY( calc(100vh - 10px) );
+  }
+} */
+
+.signupBtn {
+  background-color: #F2E56F;
+  border-radius: 10px;
   padding: 5px;
   border: 1px solid #F2E56F;
   width: 120px;
-  color: #F2E56F;
+  color: #151414;
 
 }
-.loginBtn{
-  border-radius: 30px;
+
+.loginBtn {
+  border-radius: 10px;
   padding: 5px;
   width: 120px;
   border: 1px solid #F2E56F;
   background-color: #F2E56F;
-  background: -moz-linear-gradient(left,  #F2E56F, #cbc173, #c5b85d, #F6EC8D, #c7bb51);
+  background: -moz-linear-gradient(left, #F2E56F, #cbc173, #c5b85d, #F6EC8D, #c7bb51);
   background: -webkit-linear-gradient(left, #F2E56F, #cbc173, #c5b85d, #F6EC8D, #c7bb51);
 
 }
 
-.nav-links a{
+.landing-buttons a {
   text-decoration: none;
-  color: #F2E56F;
+  color: #151414;
   font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 22px;
 }
 
-.loginBtn a{
+.loginBtn a {
   color: rgb(7, 8, 7);
 }
 
-.navbar{
+.navbar {
   display: flex;
   flex-direction: row;
   margin: 40px 50px;
   justify-content: space-between;
 }
 
-.logo{
+.logo {
   width: 70%;
+
 }
 
-.nav-logo{
+.landing-logo {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.nav-logo {
   width: 20%;
 }
-.nav-links{
+
+.landing-buttons {
   width: 25%;
   display: flex;
   justify-content: space-around;
 }
 
-.matchSelectionBtns{
+.matchSelectionBtns {
   display: flex;
 }
 
-.noVote, .yesVote{
+.noVote,
+.yesVote {
   width: 20%
 }
 
-.usercard{
+.usercard {
   border: 2px solid black;
   width: 80%
 }
@@ -82,38 +151,78 @@ body{
     flex-direction: column;
     align-items: center;
   }
-  .navbar{
+
+  .navbar {
     display: flex;
     flex-direction: row;
     margin: 30px 40px;
     justify-content: space-between;
   }
-  .logo{
-    width: 70%;
+
+  .logo {
+    width: 65%;
     /* width: 100px */
+    margin: 0 auto;
+    display: flex;
   }
-  
-  .nav-links li{
+
+  .nav-links li {
     width: 10px;
   }
-  
-  .nav-logo{
+
+  .nav-logo {
     width: 50%;
   }
 
-  .signupBtn, .loginBtn{
-    border-radius: 30px;
+  .signupBtn {
+    border-radius: 10px;
     padding: 5px;
-    width: 80px;
+    width: 170px;
+    height: 60px;
+    margin: 7px
   }
 
-  .nav-links{
-    width: 60%;
+  .appleBtn,
+  .googleBtn {
+    background-color: white;
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+    margin: 7px
+  }
+
+
+  .appleBtn img,
+  .googleBtn img {
+    height: 50px;
+  }
+
+
+  .landing-buttons {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 5px
   }
 
-  .signup-form, .login-form{
+  .landing-login {
+    height: 70px;
+  }
+
+  .landing-login p {
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .landing-login a {
+    color: #F2E56F;
+  }
+
+  .signup-form,
+  .login-form {
     color: rgb(255, 251, 251);
     width: 40%;
     display: flex;
@@ -121,14 +230,15 @@ body{
     margin: 0 auto;
   }
 
-  .signup-form input, .login-form input{
+  .signup-form input,
+  .login-form input {
     border-radius: 30px;
     padding: 10px;
     width: 100%;
   }
 
-  
-  .register-button{
+
+  .register-button {
     padding: 10px;
     width: 100%
   }

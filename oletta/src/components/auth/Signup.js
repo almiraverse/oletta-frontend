@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 
+
 export default function Signup(props) {
 
     const [newUser, setNewUser] = useState({});
@@ -17,57 +18,63 @@ export default function Signup(props) {
 
 
     return (
-        <div>
+        <div className="signupPage">
+            <h1>CREATE AN ACCOUNT</h1>
+
             <form className="signup-form">
                 <div>
-                    <label>First Name</label>&nbsp;
                     <input onChange={changeHandler}
                         type='text'
                         name='first_name'
+                        placeholder={'First Name'}
                     />
                 </div>
                 <div>
-                    <label>Last Name</label>&nbsp;
                     <input onChange={changeHandler}
                         type='text'
                         name='last_name'
+                        placeholder={'Last Name'}
                     />
                 </div>
                 <div>
-                    <label>Username</label>&nbsp;
                     <input onChange={changeHandler}
                         type='text'
                         name='username'
+                        placeholder={'Username'}
                     />
                 </div>
 
                 <div>
-                    <label>Email</label>&nbsp;
                     <input onChange={changeHandler}
                         type='email'
                         name='email'
+                        placeholder={'Email'}
                     />
                 </div>
 
 
                 <div>
-                    <label>Password</label>&nbsp;
                     <input onChange={changeHandler}
                         type='password'
                         name='password1'
+                        placeholder={'Password'}
                     />
                 </div>
 
 
                 <div>
-                    <label>Confirm Password</label>&nbsp;
                     <input onChange={changeHandler}
                         type='password'
                         name='password2'
+                        placeholder={'Confirm Password'}
                     />
                 </div>
                 <button className="register-button" onClick={registerHandler}>Continue</button>
             </form>
+
+            <div className='signupPage-login'>
+                <p>Already have an account? &nbsp; <a href='/login'>Login</a></p>
+            </div>
         </div>
     )
 

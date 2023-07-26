@@ -35,6 +35,12 @@ export default function Users() {
         console.log("i is now", i)
         //axios post to backend token of your logged in user
         // id of liked user
+        // axios.post('api/users/{i}/update')
+        // .then()
+        // .catch(err =>{
+        //     console.log(err)
+
+        // })
     }
 
     console.log("i is noyyyw", i)

@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react'
 import Signup from './components/auth/Signup'
 import Login from './components/auth/Login'
 import Users from './components/Users'
-// import LandingPage from './components/LandingPage'
+import LandingPage from './components/LandingPage'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import axios from 'axios';
@@ -64,7 +64,7 @@ export default function App() {
   return (
     <>
       <Router>
-        <nav className='navbar'>
+        {/* <nav className='navbar'>
           <div className='nav-logo'>
             <Link to='/'><img className='logo' src={require('./images/Oletta (1).png')} /></Link>
           </div>
@@ -73,18 +73,20 @@ export default function App() {
             <button className='links loginBtn'><Link to='/login'>Login</Link></button>
             <button className='links logoutBtn'><Link to='/logout'>Logout</Link></button>
           </div>
-        </nav>
+        </nav> */}
 
         <Routes>
+          <Route path='/' element={<LandingPage registerHandler={registerHandler} loginHandler={loginHandler}/>}/>
           <Route path="/register" element={<Signup register={registerHandler} />}></Route>
           <Route path="/login" element={<Login login={loginHandler} />}></Route>
-          <Route path="/login" element={<Login login={logoutHandler} />}></Route>
+          <Route path="/logout" element={<LandingPage logout={logoutHandler} />}></Route>
 
         </Routes>
       </Router>
 
-      <h1>Here are the Users:</h1>
-      <Users />
+       {/* <Users /> */}
+      {/*<LandingPage  registerHandler={registerHandler} loginHandler={loginHandler}/>
+      <LandingPage  registerHandler={'registerHandler'} loginHandler={'loginHandler'}/> */}
     </>
   )
 }
