@@ -48,7 +48,8 @@ export default function Users() {
     // console.log(allUsers)
 
     return (
-        <div>
+        <div className='userCardComponent'>
+            <div>
             {allUsers.map((user) => {
 
                 console.log("i in map is now", i)
@@ -56,13 +57,12 @@ export default function Users() {
                 if (user.id == i) {
                     return (
                         <div className='usercard' key={user.id}>
-                            <div >
-                                <h2>This is a User Card</h2>
+                            <div className='card-content'>
                                 <div><img src={user.profile_photo} /></div>
-                                <div><h3>{user.first_name} {user.last_name}</h3></div>
-                                <div><h4>@{user.username}</h4></div>
-                                <div><h5>Native Speaker of {user.native_language}</h5></div>
-                                <div><h5>Interested in Learning {user.interested_language}</h5></div>
+                                <h1>Hi, I'm {user.first_name} !</h1>
+                                <div><h2>@{user.username}</h2></div>
+                                <div><p className='nativelang'>Native Language: <br /> <em>{user.native_language}</em></p></div>
+                                <div><p className='interestedin'>Interested in Learning: <br /> <em>{user.interested_language}</em></p></div>
                             </div>
                         </div>
                     )
@@ -79,10 +79,11 @@ export default function Users() {
                 }
 
             })}
+            </div>
 
             <div className='matchSelectionBtns'>
-                <div><img className='noVote' src={require('../images/no (1).png')} onClick={votedNo} /></div>
-                <div><img className='yesVote' src={require('../images/positive-vote.png')} onClick={votedYes} /></div>
+                <img className='noVote' src={require('../images/no (1).png')} onClick={votedNo} />
+                <img className='yesVote' src={require('../images/positive-vote.png')} onClick={votedYes} />
             </div>
 
         </div>

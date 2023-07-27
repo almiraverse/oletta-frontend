@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Signup(props) {
+
+    const navigate = useNavigate();
 
     const [newUser, setNewUser] = useState({});
     const changeHandler = (e) => {
@@ -12,10 +15,21 @@ export default function Signup(props) {
         console.log(user);
         setNewUser(user);
     }
+
     const registerHandler = () => {
         props.register(newUser)
+        props.login(newUser)
     }
 
+    const navHandler = () => {
+        // navigate('/native-language')
+        navigate('/login')
+    }
+
+    const handleClick = () => {
+        registerHandler()
+        navHandler()
+    }
 
     return (
         <div className="signupPage">
@@ -69,11 +83,14 @@ export default function Signup(props) {
                         placeholder={'Confirm Password'}
                     />
                 </div>
-                <button className="register-button" onClick={registerHandler}>Continue</button>
+                <button className="register-button" onClick={handleClick}>CONTINUE</button>
             </form>
 
             <div className='signupPage-login'>
-                <p>Already have an account? &nbsp; <a href='/login'>Login</a></p>
+                <p>Already have an account?  <a href='/login'>Login</a></p>
+            </div>
+            <div className="backBtn">
+                <a href="/">Go Back</a>
             </div>
         </div>
     )

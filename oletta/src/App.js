@@ -1,11 +1,13 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Signup from './components/auth/Signup'
 import Login from './components/auth/Login'
 import Users from './components/Users'
 import LandingPage from './components/LandingPage'
+import MainPage from './components/MainPage'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import axios from 'axios';
+import NativeLanguageSelector from './components/NativeLanguageSelector'
 
 
 export default function App() {
@@ -16,26 +18,16 @@ export default function App() {
   useEffect(() => {
     let token = localStorage.getItem("token")
     if (token != null) {
-      let user =token
+      let user = token
       setIsAuth(true)
       setUser(user)
-    } 
+    }
     else if (!user) {
       localStorage.remove("token")
       setIsAuth(false)
     }
 
   }, [])
-
-  const registerHandler = (user) => {
-    console.log(user)
-    axios.post("auth/register/", user)
-      .then(res => {
-        console.log(res)
-      }).catch(err => {
-        console.log(err)
-      })
-  }
 
   const loginHandler = (cred) => {
     axios.post("auth/login/", cred)
@@ -54,8 +46,38 @@ export default function App() {
       })
   }
 
+  const registerHandler = (user) => {
+    console.log(user)
+
+    axios.post("auth/register/", user)
+      .then(res => {
+        console.log(res)
+
+        // loginHandler = (cred) => {
+        //   axios.post("auth/login/", cred)
+        //     .then(res => {
+        //       console.log(res.data.token)
+        //       let token = res.data.token
+        //       if (token != null) {
+        //         localStorage.setItem("token", token);
+        //         let user = token;
+        //         setIsAuth(true)
+        //         setUser(user)
+        //       }
+                
+        //     }).catch(err => {
+        //       console.log(err)
+        //     })
+        // }
+
+      }).catch(err => {
+        console.log(err)
+      })
+  }
+
+
   const logoutHandler = (e) => {
-    e.preventDefault() 
+    e.preventDefault()
     localStorage.removeItem("token");
     setIsAuth(false)
     setUser(null)
@@ -76,15 +98,17 @@ export default function App() {
         </nav> */}
 
         <Routes>
-          <Route path='/' element={<LandingPage registerHandler={registerHandler} loginHandler={loginHandler}/>}/>
-          <Route path="/register" element={<Signup register={registerHandler} />}></Route>
+          <Route path='/' element={<LandingPage registerHandler={registerHandler} loginHandler={loginHandler} />} />
+          <Route path="/register" element={<Signup register={registerHandler} login={loginHandler} />}></Route>
           <Route path="/login" element={<Login login={loginHandler} />}></Route>
           <Route path="/logout" element={<LandingPage logout={logoutHandler} />}></Route>
-
+          <Route path="/main" element={<MainPage login={loginHandler} registerHandler={registerHandler} logout={logoutHandler} />}></Route>
+          <Route path="/native-language" element={<NativeLanguageSelector login={loginHandler} registerHandler={registerHandler} logout={logoutHandler} />}></Route>
+          
         </Routes>
       </Router>
 
-       {/* <Users /> */}
+      {/* <Users /> */}
       {/*<LandingPage  registerHandler={registerHandler} loginHandler={loginHandler}/>
       <LandingPage  registerHandler={'registerHandler'} loginHandler={'loginHandler'}/> */}
     </>

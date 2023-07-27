@@ -17,13 +17,15 @@ export default function Login(props) {
 
   const loginHandler = () => {
     props.login(newUser)
+    navigate('/main')
+
   }
 
 
   return (
 
-    <div>
-      <h1>Login</h1>
+    <div className='loginPage'>
+      <h1>WELCOME BACK!</h1>
       <form className="login-form">
 
         <div>
@@ -31,6 +33,8 @@ export default function Login(props) {
           <input onChange={changeHandler}
             type='text'
             name='username'
+            placeholder={'Username'}
+
           />
         </div>
 
@@ -40,12 +44,22 @@ export default function Login(props) {
           <input onChange={changeHandler}
             type='password'
             name='password'
+            placeholder={'Password'}
+
           />
         </div>
 
 
-        <button onClick={loginHandler}>Login</button>
+        <button className="loginBtn"onClick={loginHandler}>Login</button>
       </form>
+
+      <div className='loginPage-signup'>
+                <p>Don't have an account?  <a href='/register'>Register</a></p>
+            </div>
+            <div className="backBtn">
+                <a href="/">Go Back</a>
+            </div>
+
     </div>
 
   )
