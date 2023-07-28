@@ -87,14 +87,18 @@ This section will cover the flow of the app and the way it's meant to be used.
 * After account setup or if a user logs in, they are directed to the main page of the app where they can see 'user cards'. Here is where they will be able to swipe right or left (or vote yes or no) in order to match with users.
 * If two users have both swiped right on each other, they will both get a notification letting them know that they have a new match.
 
-#### Other general features:
-
-* Users will be able to chat with each other and also form communities
-* Users will be able to post updates (sort of like social media) of their language learning journey
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Next Steps
+
+* Fix the matching algorithm so that users can actually match with each other instead of just voting yes or no
+* Fix the bug that is when users swipe till the end of the 'user cards', it should not restart and reshow all the users
+* Add messaging features
+* Add user profile view
+
+#### Other general features to be added:
+* Users will be able to chat with each other and also form communities
+* Users will be able to post updates (sort of like social media) of their language learning journey
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
