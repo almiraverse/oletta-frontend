@@ -4,10 +4,12 @@ import Login from './components/auth/Login'
 import Users from './components/Users'
 import LandingPage from './components/LandingPage'
 import MainPage from './components/MainPage'
+import Chats from './components/Chats'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import axios from 'axios';
 import NativeLanguageSelector from './components/NativeLanguageSelector'
+import Notifs from './components/Notifs'
 
 
 export default function App() {
@@ -104,6 +106,8 @@ export default function App() {
           <Route path="/logout" element={<LandingPage logout={logoutHandler} />}></Route>
           <Route path="/main" element={<MainPage login={loginHandler} registerHandler={registerHandler} logout={logoutHandler} />}></Route>
           <Route path="/native-language" element={<NativeLanguageSelector login={loginHandler} registerHandler={registerHandler} logout={logoutHandler} />}></Route>
+          <Route path="/community" element={<Chats login={loginHandler} registerHandler={registerHandler} logout={logoutHandler} />}></Route>
+          <Route path="/notifs" element={<Notifs login={loginHandler} registerHandler={registerHandler} logout={logoutHandler} />}></Route>
           
         </Routes>
       </Router>

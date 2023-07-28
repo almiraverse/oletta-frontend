@@ -1,10 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function MainNav() {
+    const navigate = useNavigate()
+
+    const messageHandler = () =>{
+        navigate('/community')
+    }
+   
     return (
         <div className='mainNav'>
             <div className='messagesBtn'>
-                <img src={require('../images/speak 1.png')} />
+                <img onClick={messageHandler} src={require('../images/speak 1.png')} />
             </div>
 
             <div className='addPostBtn'>
