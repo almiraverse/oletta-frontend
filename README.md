@@ -80,7 +80,17 @@ This project was built using the following technologies:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+This section will cover the flow of the app and the way it's meant to be used.
+
+* Users will be able to sign up for a new account and will be logged into their account automatically.
+* New users who have just signed up will be redirected to account setup, where they will be able to select their native languages & up to 3 other languages that they're interested in learning. These settings will affect the 'matching' algorithm.
+* After account setup or if a user logs in, they are directed to the main page of the app where they can see 'user cards'. Here is where they will be able to swipe right or left (or vote yes or no) in order to match with users.
+* If two users have both swiped right on each other, they will both get a notification letting them know that they have a new match.
+
+#### Other general features:
+
+* Users will be able to chat with each other and also form communities
+* Users will be able to post updates (sort of like social media) of their language learning journey
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,7 +108,6 @@ LinkedIn - [@almiraam](https://www.linkedin.com/in/almiraam/)
 Project Link: Coming Soon!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 
