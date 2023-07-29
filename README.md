@@ -95,6 +95,7 @@ This section will cover the flow of the app and the way it's meant to be used.
 * Fix the bug that is when users swipe till the end of the 'user cards', it should not restart and reshow all the users
 * Add messaging features
 * Add user profile view
+* Recreate the app in React Native so that it actually works on mobile (this project was simply to present the app features and idea)
 
 #### Other general features to be added:
 * Users will be able to chat with each other and also form communities
